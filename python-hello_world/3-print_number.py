@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print("%(number)s Battery street" % {"number": "98"})
+number = 98
+print("{} Battery street".format(number))
