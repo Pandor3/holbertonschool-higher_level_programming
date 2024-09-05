@@ -1,0 +1,1 @@
+This directory has been made during my cursus at the Holberton Coding School, it is used to store the various exercises I will be doing in order to push further my knowledge about the Python programming language.
