@@ -1,0 +1,1 @@
+This directory has been made during my cursus at the Holberton Coding School, here you will see various exercises that I did in order to learn more about Data structures than in the other directories of this repository
