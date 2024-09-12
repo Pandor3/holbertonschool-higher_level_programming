@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Add module """
 
 def add_integer(a, b=98):
     """

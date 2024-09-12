@@ -1,1 +1,33 @@
-Hey
+Fichier test de la task 0
+
+>>> add_integer = __import__("0-add_integer").add_integer
+
+>>> add_integer(5, 10)
+15
+
+>>> add_integer(6.2, 4.7)
+10
+
+>>> add_integer(2)
+100
+
+>>> add_integer(7.5, 5)
+12
+
+>>> add_integer(8, -3)
+5
+
+>>> add_integer("Z", 42)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(25, "-b")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer("Hello", "There")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
