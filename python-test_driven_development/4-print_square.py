@@ -8,15 +8,12 @@ This contains the print_size function
 
 def print_square(size):
 
-
     """
 Prints:
     Size Square
 Size:
     Value of the print
     """
-
-
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
