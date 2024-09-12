@@ -2,7 +2,7 @@
 
 
 """
-This contains the print_size function
+This contains the print_square function
 """
 
 
@@ -11,6 +11,8 @@ def print_square(size):
     """
 Prints:
     Size Square
+Args:
+    Size which is an int, the length of square
 Size:
     Value of the print
     """
