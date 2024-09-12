@@ -1,1 +1,29 @@
-Hey
+Fichier test de la task 2
+
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+>>> say_my_name("James", "Bond")
+My name is James Bond
+
+>>> say_my_name("John", 42)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(45, "James")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Walter", None)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Bond")
+My name is Bond
