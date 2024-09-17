@@ -1,0 +1,1 @@
+This directory has been made during my cursus at the Holberton Coding School, it will be used to store various exercises which will help me with the concept of classes, instances, methods and attributes.
