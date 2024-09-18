@@ -64,7 +64,7 @@ class Rectangle:
         lines = []
         for _ in range(self.height):
             if isinstance(self.print_symbol, list):
-                row = ''.join(str(symbol) for symbol in self.print_symbol) * self.__width
+                row = ''.join(str(symbol) for symbol in self.print_symbol) * self.width
             else:
                 row = str(self.print_symbol) * self.__width
             lines.append(row)
