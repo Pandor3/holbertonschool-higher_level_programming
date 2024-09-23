@@ -1,0 +1,1 @@
+This directory has been made during my cursus at the Holberton coding school, it will be used to store various exercises regarding the python programming language, most specifically about inheritance.
