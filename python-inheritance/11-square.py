@@ -27,3 +27,11 @@ class Square(Rectangle):
         """
 
         return self.__size ** 2
+
+    def __str__(self):
+        """
+        a defined function which will print the chosen
+        string
+        """
+
+        return "[Square] {}/{}".format(self.__size, self.__size)
