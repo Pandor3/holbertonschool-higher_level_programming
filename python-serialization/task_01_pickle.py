@@ -35,8 +35,11 @@ class CustomObject:
         """
         Serialize method
         """
-        with open(filename, 'wb') as file:
-            pickle.dump(self, file)
+        try:
+            with open(filename, 'wb') as file:
+                pickle.dump(self, file)
+        except Exception as e:
+            print("an Error occured", e)
 
     @classmethod
     def deserialize(cls, filename):
@@ -48,5 +51,12 @@ class CustomObject:
             print("File not found.")
             return None
 
-        with open(filename, 'rb') as file:
-            return pickle.load(file)
+        try:
+            with open(filename, 'rb') as file:
+                return pickle.load(file)
+        except pickle.UnpicklingError:
+            print("Error occurred while unpickling.")
+            return None
+        except Exception as e:
+            print("Error occurred:", e)
+            return None
