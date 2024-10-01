@@ -4,6 +4,7 @@ This module will be used to serialize and deserialize
 custom Python objects with Python
 """
 
+import os
 import pickle
 
 
@@ -42,6 +43,10 @@ class CustomObject:
         """
         deserialize method
         """
+
+        if not os.path.exists(filename):
+            print("File not found.")
+            return None
 
         with open(filename, 'rb') as file:
             return pickle.load(file)
