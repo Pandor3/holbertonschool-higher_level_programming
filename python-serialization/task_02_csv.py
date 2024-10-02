@@ -15,5 +15,3 @@ def convert_csv_to_json(csv_file, json_file):
         data = list(reader)
     with open(json_file, 'w') as file:
         json.dump(data, file)
-
-    convert_csv_to_json('data.csv', 'data.json')
