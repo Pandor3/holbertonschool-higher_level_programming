@@ -9,10 +9,11 @@ import csv
 import json
 
 
-def convert_csv_to_json(self):
-    with open(csv, 'r') as file:
+def convert_csv_to_json(csv_file, json_file):
+    with open(csv_file, 'r') as file:
         reader = csv.DictReader(file)
-    for rown in reader:
-        print(row)
-    with open(csv, 'r') as file:
-        json.dump(file)
+        data = list(reader)
+    with open(json_file, 'w') as file:
+        json.dump(data, file)
+
+    convert_csv_to_json('data.csv', 'data.json')
