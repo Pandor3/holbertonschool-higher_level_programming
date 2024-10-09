@@ -37,8 +37,6 @@ def fetch_and_save_posts():
     URL = 'https://jsonplaceholder.typicode.com/posts'
     result = requests.get(URL)
 
-    print(f"Status Code:{result.status_code}")
-
     if result.status_code == 200:
         posts = result.json()
         post_struct = []
