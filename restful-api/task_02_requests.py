@@ -48,7 +48,7 @@ def fetch_and_save_posts():
                 }
             post_struct.append(post_data)
 
-    with open('posts.csv', 'w', newline='', encoding='UTF-8') as file:
-        writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
-        writer.writeheader()
-        writer.writerows(post_struct)
+        with open('posts.csv', 'w', newline='', encoding='UTF-8') as file:
+            writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
+            writer.writeheader()
+            writer.writerows(post_struct)
