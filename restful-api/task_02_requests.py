@@ -18,15 +18,15 @@ def fetch_and_print_posts():
     URL = 'https://jsonplaceholder.typicode.com/posts'
     result = requests.get(URL)
 
-    print("Status Code:{}".result.status_code)
+    print(f"Status Code: {result.status_code}")
 
     if result.status_code == 200:
-        post = result.json()
+        posts = result.json()
         for post in posts:
-            print("{}".post['title'])
+            print(f"{post['title']}")
     else:
         print("Failed to fetch posts")
-fetch_and_print_posts()
+
 
 def fetch_and_save_posts():
     """
@@ -37,17 +37,20 @@ def fetch_and_save_posts():
     URL = 'https://jsonplaceholder.typicode.com/posts'
     result = requests.get(URL)
 
-    print ("Status Code:{}".result.status_code)
+    print(f"Status Code:{result.status_code}")
 
     if result.status_code == 200:
-        post = result.json()
+        posts = result.json()
         post_struct = []
-        for posts in posts:
-            post_struct: {
-                    'id' = post['id'],
-                    'title' = post['title'],
-                    'body' = post['body'],
+        for post in posts:
+            post_data = {
+                    'id': post['id'],
+                    'title': post['title'],
+                    'body': post['body'],
                 }
-            post_struct.append(post_struct)
+            post_struct.append(post_data)
 
-        with open
+    with open('posts.csv', 'w', newline='', encoding='UTF-8') as file:
+        writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
+        writer.writeheader()
+        writer.writerows(post_struct)
