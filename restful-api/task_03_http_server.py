@@ -13,7 +13,6 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     Class which will define how the API works
     """
 
-
     def do_GET(self):
         if self.path == "/":
             self.send_response(200)
