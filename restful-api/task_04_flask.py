@@ -11,7 +11,10 @@ from flask import jsonify
 
 app = Flask(__name__)
 
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+users = {
+    "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
+    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
+    }
 
 
 @app.route("/")
@@ -37,15 +40,21 @@ def get_users(username):
         return jsonify({"error": "User not found"}), 404
 
 
-@app.route("/add_user", methods = ['POST'])
+@app.route("/add_user", methods=['POST'])
 def add_new_user():
-    if request.is_json:
-        add_user = request.get_json()
-        username = add_user.get('username')
-        if not username:
-            return jsonify({"error": "Username is required!"}), 400
-        users[username] = add_user
-        return jsonify({"message": "User added"}), 201
+    data = request.get_json()
+    if 'username' not in data or not data['username']:
+        return jsonify({"error": "Username is required"}), 400
+    username = data['username']
+    if username in users:
+        return jsonify({"error": "User already exists"}), 400
+    users[username] = {
+            "username": username,
+            "name": data.get('name', ''),
+            "age": data.get('age', 0),
+            "city": data.get('city', '')
+        }
+    return jsonify({"message": "User added", "user": users[username]}), 201
 
 
 if __name__ == "__main__":
