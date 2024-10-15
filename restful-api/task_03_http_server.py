@@ -27,7 +27,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             data = {
                     "name": "John",
-                    "age": "30",
+                    "age": 30,
                     "city": "New York"
                     }
             self.wfile.write(json.dumps(data).encode("utf-8"))
