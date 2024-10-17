@@ -13,7 +13,7 @@ from flask_jwt_extended import jwt_required, JWTManager
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config["JWT_SECRET_KEY"] = "ABC&abc&123"
+app.config["JWT_SECRET_KEY"] = "Test"
 jwt = JWTManager(app)
 
 users = {
@@ -39,6 +39,7 @@ def verify_password(username, password):
     user = users.get(username)
     if user and check_password_hash(user['password'], password):
         return username
+    return None
 
 
 @app.route("/basic-protected", methods=["GET"])
@@ -48,14 +49,14 @@ def basic_protected():
     Method which will check if the route is secure
     """
 
-    return jsonify("Basic Auth: Access Granted"), 200
+    return ("Basic Auth: Access Granted"), 200
 
 
 @app.route("/login", methods=["POST"])
 def login():
     """
     Method which will identify the user via
-    a username and password and give him a 
+    a username and password and give him a
     Json Web Token if the credentials are valid
     """
 
@@ -89,7 +90,7 @@ def admin_only(username, password):
     and then give him access if the credentials are valid
     """
 
-    if users['role'] != users['admin1']:
+    if users['role'] != users['admin']:
         return ({"error": "Admin access required"}), 403
     else:
         return ("Admin Access: Granted"), 200
