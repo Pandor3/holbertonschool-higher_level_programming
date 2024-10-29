@@ -1,0 +1,2 @@
+This repository has been made in order to contain the exercises I've been assigned to do at the Holberton Coding School
+These exercises were made in order to learn more about Structured Query Language (SQL) and its subqueries.
