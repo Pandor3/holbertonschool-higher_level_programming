@@ -15,20 +15,16 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    cursor = db.cursor()
 
-    state_name_searched = sys.argv[4]
-    query = (
-        "SELECT * FROM states "
-        "WHERE name = '{}' "
-        "ORDER BY id ASC".format(state_name_searched.replace("'", "''"))
+    cursor.execute(
+        "SELECT * FROM states \
+        "WHERE name = '{}' \
+        "ORDER BY id ASC".format(sys.argv[4]))
     )
 
-    cursor.execute(query)
-
     for state in cursor.fetchall():
-        if state["name"] == state_name_searched:
-            print(state)
+        print("{}".format(state))
 
     cursor.close()
     db.close()
