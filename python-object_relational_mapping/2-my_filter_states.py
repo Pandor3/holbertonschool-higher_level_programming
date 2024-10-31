@@ -18,10 +18,9 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states \
-        "WHERE name = '{}' \
+        "SELECT * FROM states "
+        "WHERE name = '{}' "
         "ORDER BY id ASC".format(sys.argv[4]))
-    )
 
     for state in cursor.fetchall():
         print("{}".format(state))
