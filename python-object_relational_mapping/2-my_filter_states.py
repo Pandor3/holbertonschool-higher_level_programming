@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """
-This module will be used to take an argument and display all values
-in the states table of hbtn_0e_0_usa where name matches the argument
+This module takes an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument.
 """
-
 
 import MySQLdb
 import sys
@@ -12,13 +11,20 @@ if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         user=sys.argv[1],
-        password=sys.argv[2],
-        database=sys.argv[3],
-        state_name_searched=sys.argv[4]
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC;".format(state_name_searched.replace("'", "''")))
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+
+    state_name_searched = sys.argv[4]
+    query = (
+        "SELECT * FROM states "
+        "WHERE name = '{}' "
+        "ORDER BY id ASC".format(state_name_searched.replace("'", "''"))
+    )
+
+    cursor.execute(query)
 
     for state in cursor.fetchall():
         if state["name"] == state_name_searched:
