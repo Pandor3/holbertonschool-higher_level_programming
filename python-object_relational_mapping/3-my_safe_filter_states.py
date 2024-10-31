@@ -25,7 +25,7 @@ if __name__ == "__main__":
     )
 
     for state in cursor.fetchall():
-        print(f"{}"(state))
+        print("{}".format(state))
 
     cursor.close()
     db.close()
