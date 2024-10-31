@@ -15,17 +15,17 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    cursor = db.cursor()
 
     cursor.execute(
         "SELECT * FROM states "
-        "WHERE BINARY name = '{}' "
         "ORDER BY id ASC",
         (sys.argv[4],)
     )
 
     for state in cursor.fetchall():
-        print("{}".format(state))
+        if str(state[1]) == sys.argv[4]:
+            print("{}".format(state))
 
     cursor.close()
     db.close()
