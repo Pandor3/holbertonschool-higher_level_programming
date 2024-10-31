@@ -17,10 +17,10 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT states.id FROM states ORDER BY states.id ASC;")
+    cursor.execute("SELECT * FROM states WHERE name STARTS WITH 'N' ORDER BY states.id ASC;")
 
-    for states.id in cursor.fetchall():
-        print(states.id)
+    for states in cursor.fetchall():
+        print(states)
 
     cursor.close()
     db.close()
