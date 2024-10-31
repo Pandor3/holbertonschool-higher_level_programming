@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute(
-            "SELECT cities FROM states "
+            "SELECT * FROM states "
             "ORDER BY cities.id ASC ",
     )
 
