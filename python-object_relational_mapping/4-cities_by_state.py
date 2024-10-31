@@ -19,13 +19,10 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    cursor.execute(
-            "SELECT * FROM states "
-            "ORDER BY cities.id ASC ",
-    )
+    cursor.execute("SELECT * FROM states ORDER BY cities.id ASC;")
 
     for state in cursor.fetchall():
-        print("{}".format(state))
+        print(state)
 
     cursor.close()
     db.close()
