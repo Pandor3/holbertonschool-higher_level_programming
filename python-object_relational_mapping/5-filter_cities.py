@@ -12,7 +12,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         user=sys.argv[1],
-        passwd=sys.argv[2],
+        password=sys.argv[2],
         database=sys.argv[3]
     )
 
@@ -20,12 +20,9 @@ if __name__ == "__main__":
     cursor.execute("SELECT cities.name \
                     FROM cities JOIN states ON cities.state_id = states.id \
                     WHERE states.name = %s \
-                    ORDER BY cities.id ASC;",
-                    (sys.argv[4],)
-    )
+                    ORDER BY cities.id ASC;", (sys.argv[4], ))
 
-    cities = cursor.fetchall()
-    print(", ".join([row[0] for row in cities]))
+    print(", ".join([row[0] for row in cursor.fetchall()]))
 
     cursor.close()
     db.close()
