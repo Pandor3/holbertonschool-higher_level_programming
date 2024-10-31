@@ -22,7 +22,8 @@ if __name__ == "__main__":
                     WHERE states.name = %s \
                     ORDER BY cities.id ASC;", (sys.argv[4], ))
 
-    print(", ".join([row[0] for row in cursor.fetchall()]))
+    cities = cursor.fetchall()
+    print(", ".join([row[0] for row in cities]))
 
     cursor.close()
     db.close()
