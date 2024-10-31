@@ -24,7 +24,7 @@ if __name__ == "__main__":
             ORDER BY cities.id ASC;", (sys.argv[4],))
 
     for row in cursor.fetchall():
-        print("{}, ".format(row[0]))
+        print("{}, ".join.format(row[0]))
 
     cursor.close()
     db.close()
