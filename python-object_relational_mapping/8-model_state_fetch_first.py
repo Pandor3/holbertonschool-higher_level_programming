@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module will print the first State object from the database named hbtn_0e_6_usa
+This module will print the first State object from
+the database named hbtn_0e_6_usa
 """
 
 from model_state import Base, State
