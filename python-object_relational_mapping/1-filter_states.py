@@ -17,10 +17,10 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC;")
+    cursor.execute("SELECT states.id FROM states ORDER BY states.id ASC;")
 
-    for state.id in cursor.fetchall():
-        print(state.id)
+    for states.id in cursor.fetchall():
+        print(states.id)
 
     cursor.close()
     db.close()
