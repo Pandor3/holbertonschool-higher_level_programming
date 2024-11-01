@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module will delete all State objects with a name 
+This module will delete all State objects with a name
 containing the letter a from the database named hbtn_0e_6_usa
 """
 
@@ -26,6 +26,6 @@ if __name__ == "__main__":
     states = session.query(State).filter(State.name.contains("a")).all()
     for state in states:
         session.delete(state)
-    
+
     session.commit()
     session.close()
