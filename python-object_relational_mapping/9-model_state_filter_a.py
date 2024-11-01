@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module will list all State objects that contains the letter a from the database hbtn_0e_6_usa
+This module will list all State objects that contains
+the letter a from the database hbtn_0e_6_usa
 """
 
 from model_state import Base, State
@@ -20,11 +21,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    
-    states = session.query(State).all()
+
+    states = session.query(State).filter(State.name.contains('a')).all()
 
     for state in states:
-        if "a" in state.name:
-            print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
 
     session.close()
