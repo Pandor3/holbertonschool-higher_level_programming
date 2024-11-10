@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+This module will be used to use Jinja and create a template
+"""
 from flask import Flask, render_template
 
 app = Flask(__name__)

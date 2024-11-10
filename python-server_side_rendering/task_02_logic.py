@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+This module will be used to create a dynamic content
+and use Jinja loops
+"""
+
 import json
 from flask import Flask, render_template
 
