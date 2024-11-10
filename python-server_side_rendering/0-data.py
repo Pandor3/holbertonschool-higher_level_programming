@@ -3,3 +3,7 @@ attendees = [
     {"name": "Bob", "event_title": "Data Science Workshop", "event_date": "2023-08-20", "event_location": "San Francisco"},
     {"name": "Charlie", "event_title": "AI Summit", "event_date": None, "event_location": "Boston"}
 ]
+
+{
+    "items": ["Python Book", "Flask Mug", "Jinja Sticker"]
+}
