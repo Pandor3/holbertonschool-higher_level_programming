@@ -1,0 +1,2 @@
+This repository has been made in order to classify all of the exercises I've taken a part in during my cursus at the Holberton Coding School.
+These exercises were made in order to learn more about Server Side Rendering (SSR).
